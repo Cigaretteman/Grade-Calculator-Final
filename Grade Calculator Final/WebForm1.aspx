@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CalculateForm.aspx.cs" Inherits="Grade_Calculator_Final.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Grade_Calculator_Final.WebForm1" %>
 
 <!DOCTYPE html>
 
