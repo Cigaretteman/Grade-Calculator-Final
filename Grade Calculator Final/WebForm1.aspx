@@ -6,6 +6,10 @@
 <head runat="server">
     <title></title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <link href="~/calcFormStyle.css" rel="Stylesheet" type="text/css" />
     <script type="text/javascript">
         function MyFunction() {
             var bool = true;
@@ -20,7 +24,7 @@
             });
 
             $(".vHours").each(function (index) {
-                if ($(this).val().length <= 0 || !isNaN($(this).val())) {
+                if ($(this).val().length <= 0 || isNaN($(this).val())) {
                     $(this).css('border-color', 'red');
                     bool = false;
                 }
@@ -45,17 +49,24 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="row">
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
             </asp:ScriptManager>
-            <asp:Button runat="server" Text="Clear" />
-            <asp:Button runat="server" Text="Calculate" OnClick="Calculate" OnClientClick="return MyFunction();" />
-            <asp:TextBox ID="CourseName" Text="TextName" runat="server"></asp:TextBox>
-            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>
-                    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
-                    <asp:Button runat="server" Text="Add Class" OnClick="Btn_Click" />
-
+            <div class="col-md-4">
+                <asp:Button runat="server" Text="Clear" Width="115px" />
+                <br />
+                <asp:Button runat="server" width="115px" Text="Calculate" OnClick="Calculate" OnClientClick="return MyFunction();" />
+                <br />
+                <asp:Button runat="server" Text="Add Class" OnClick="Btn_Click" Width="115px" />
+                <br />
+                <br />
+                <asp:TextBox ID="CourseName" Text="" runat="server"></asp:TextBox>
+                <br />
+                <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" width="115px"/>
+            </div>
+            <div class="col-md-8">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
                     <asp:Table ID="mainTable" runat="server">
                         <asp:TableHeaderRow ID="headerRow">
                             <asp:TableHeaderCell>Course Name</asp:TableHeaderCell>
@@ -237,12 +248,14 @@
                             <asp:TableCell><asp:TextBox CssClass="vGrade" runat="server"></asp:TextBox></asp:TableCell>
                             <asp:TableCell><asp:Button runat="server" OnClick="Unnamed_Click" Text="X"/></asp:TableCell>
                         </asp:TableRow>
-
-
                     </asp:Table>
-                    <asp:Label ID="lblGpaOut" runat="server" Text="GPA:"></asp:Label>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:ListBox runat="server" ID="listOut" Height="182px" Width="537px"></asp:ListBox>
+            </div>
+            <div class="col-md-4">
+                <asp:Label ID="lblGPAOut" runat="server" Text="GPA:"></asp:Label>
+            </div>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CoursesConnectionString %>" SelectCommand="SELECT [Course Code],[Course Name],[Course Hours],[Course Grade] FROM [computerProgrammerView] ORDER BY [Semester]"></asp:SqlDataSource>
     </form>
