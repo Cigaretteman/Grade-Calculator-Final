@@ -1,0 +1,33 @@
+﻿#headerRow {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(128, 128, 128);
+    border-style: solid;
+}
+
+.left, .right {
+    float: left;
+    width: 20%;
+}
+
+.middle {
+    float: left;
+    width: 25%;
+}
+
+.redSquare {
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+.landingBorder {
+    background-color: rgb(128, 128, 128);
+    border-radius: 5px;
+    align-content: center;
+    padding: 10px
+}
+
+.ErrorMessage {
+    color: red;
+}
