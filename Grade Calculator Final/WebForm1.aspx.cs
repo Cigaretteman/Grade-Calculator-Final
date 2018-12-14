@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -242,7 +243,7 @@ namespace Grade_Calculator_Final
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string Query = "INSERT INTO Classes (Course, Classes) VALUES ('";
+            StringBuilder Query = new StringBuilder("INSERT INTO Courses (CourseName, Classes) VALUES ('CourseName','");
             Dictionary<string, string> Data = new Dictionary<string, string>();
             List<string> Classes = new List<string>();
             for (int k = 0; k < mainTable.Rows.Count; k++)
@@ -255,23 +256,22 @@ namespace Grade_Calculator_Final
                         {
                             case 0:
                                 Data.Add("@course" + k, a.Text);
-                                Classes.Add("@course" + k);
+                                Query.Append("@course" + k + " \n ");
                                 break;
                             case 1:
                                 Data.Add("@hours" + k, a.Text);
-                                Classes.Add("@hours" + k);
+                                Query.Append("@hours" + k + " \n ");
                                 break;
                         }
                     }
                 }
             }
-            string joinMerge = string.Join(" \n ", Classes);
-            Query += joinMerge + "')";
+            Query.Remove(Query.Length - 4, 4).Append("')");
 
             using (SqlConnection Client = new SqlConnection(SqlDataSource1.ConnectionString))
             {
                 Client.Open();
-                using (SqlCommand Cmd = new SqlCommand(Query, Client))
+                using (SqlCommand Cmd = new SqlCommand(Query.ToString(), Client))
                 {
                     foreach (KeyValuePair<string, string> value in Data)
                     {

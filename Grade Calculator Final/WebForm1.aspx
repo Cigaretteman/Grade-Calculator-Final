@@ -50,6 +50,7 @@
             </asp:ScriptManager>
             <asp:Button runat="server" Text="Clear" />
             <asp:Button runat="server" Text="Calculate" OnClick="Calculate" OnClientClick="return MyFunction();" />
+            <asp:TextBox ID="CourseName" Text="TextName" runat="server"></asp:TextBox>
             <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
@@ -239,6 +240,7 @@
 
 
                     </asp:Table>
+                    <asp:Label ID="lblGpaOut" runat="server" Text="GPA:"></asp:Label>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
