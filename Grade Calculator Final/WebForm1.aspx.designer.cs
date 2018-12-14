@@ -31,6 +31,15 @@ namespace Grade_Calculator_Final {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
+        /// CourseName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CourseName;
+        
+        /// <summary>
         /// UpdatePanel2 control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace Grade_Calculator_Final {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TableHeaderRow headerRow;
+        
+        /// <summary>
+        /// lblGpaOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGpaOut;
         
         /// <summary>
         /// SqlDataSource1 control.
