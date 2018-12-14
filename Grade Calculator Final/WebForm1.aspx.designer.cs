@@ -40,15 +40,6 @@ namespace Grade_Calculator_Final {
         protected global::System.Web.UI.WebControls.TextBox CourseName;
         
         /// <summary>
-        /// UpdatePanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
-        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace Grade_Calculator_Final {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
         /// mainTable control.
@@ -76,13 +76,22 @@ namespace Grade_Calculator_Final {
         protected global::System.Web.UI.WebControls.TableHeaderRow headerRow;
         
         /// <summary>
-        /// lblGpaOut control.
+        /// listOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGpaOut;
+        protected global::System.Web.UI.WebControls.ListBox listOut;
+        
+        /// <summary>
+        /// lblGPAOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGPAOut;
         
         /// <summary>
         /// SqlDataSource1 control.

@@ -72,38 +72,48 @@ namespace Grade_Calculator_Final
                     MissingHours = 0,
                     GPA = 0
                 };
-
-                for (int i = 0; i < mainTable.Rows.Count; i++)
+                int visibleRows = 0;
+                //for loop o count every visible row
+                for (int i = 1; i < mainTable.Rows.Count; i++)
                 {
-                    Grades.TotalHours += int.Parse(mainTable.Rows[i].Cells[1].ToString());
+                    if (mainTable.Rows[i].Visible == true)
+                    {
+                        visibleRows++;
+                    }
+                }
+
+                //get values from the maintable
+                for (int i = 1; i < visibleRows; i++)
+                {
+                    Grades.TotalHours += int.Parse(mainTable.Rows[i].Cells[1].);
                     if (int.TryParse(gradeInputs[i].Text, out int Grade))
                     {
                         if (GradeValues.Contains((Grade = GetGrade(Grade))))
                         {
-                            Grades.QualityPoints += (Grade * Convert.ToInt32(mainTable.Rows[i].Cells[1]));
-                            Grades.FilledHours += Convert.ToInt32(mainTable.Rows[i].Cells[1]);
+                            Grades.QualityPoints += (Grade * Convert.ToInt32(mainTable.Rows[i].Cells[1].Text));
+                            Grades.FilledHours += Convert.ToInt32(mainTable.Rows[i].Cells[1].Text);
                             Grades.FilledCount++;
                         }
                         else
                         {
                             Unfilled.Add(new ClassHolder
                             {
-                                ClassName = mainTable.Rows[i].Cells[0].ToString(),
-                                CreditScore = int.Parse(mainTable.Rows[i].Cells[1].ToString())
+                                ClassName = mainTable.Rows[i].Cells[0].Text.ToString(),
+                                CreditScore = int.Parse(mainTable.Rows[i].Cells[1].Text.ToString())
                             });
                             Grades.UnfilledCount++;
-                            Grades.MissingHours += int.Parse(mainTable.Rows[i].Cells[1].ToString());
+                            Grades.MissingHours += int.Parse(mainTable.Rows[i].Cells[1].Text.ToString());
                         }
                     }
                     else
                     {
                         Unfilled.Add(new ClassHolder
                         {
-                            ClassName = mainTable.Rows[i].Cells[0].ToString(),
-                            CreditScore = int.Parse(mainTable.Rows[i].Cells[1].ToString())
+                            ClassName = mainTable.Rows[i].Cells[0].Text.ToString(),
+                            CreditScore = int.Parse(mainTable.Rows[i].Cells[1].Text.ToString())
                         });
                         Grades.UnfilledCount++;
-                        Grades.MissingHours += int.Parse(mainTable.Rows[i].Cells[1].ToString());
+                        Grades.MissingHours += int.Parse(mainTable.Rows[i].Cells[1].Text.ToString());
                     }
                     Grades.TotalCount++;
                 }
