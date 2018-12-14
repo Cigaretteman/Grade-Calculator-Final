@@ -82,7 +82,7 @@ namespace Grade_Calculator_Final
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            StringBuilder Query = new StringBuilder("INSERT INTO Courses (CourseName, Classes) VALUES ('CourseName','");
+            StringBuilder Query = new StringBuilder($"INSERT INTO Courses (CourseName, Classes) VALUES ('{CourseName.Text}','");
             Dictionary<string, string> Data = new Dictionary<string, string>();
             List<string> Classes = new List<string>();
             for (int k = 0; k < mainTable.Rows.Count; k++)
