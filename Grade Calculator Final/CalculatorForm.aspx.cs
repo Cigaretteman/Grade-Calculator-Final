@@ -117,7 +117,7 @@ namespace Grade_Calculator_Final
                                 lblGPAOut.Text = "Client side manipulation detected";
                                 return;
                             }
-                            else if (GradeValues.Contains(Hours = GetGrade(Grade)))
+                            else if (GradeValues.Contains(Grade = GetGrade(Grade)))
                             {
                                 Grades.QualityPoints += (Grade * Hours);
                                 Grades.FilledHours += Hours;
@@ -153,6 +153,10 @@ namespace Grade_Calculator_Final
                 }
                 //calculate GPA with method call
                 Grades.GPA = (double)Grades.QualityPoints / Grades.FilledHours;
+                if (Grades.UnfilledCount <= 0)
+                {
+                    return;
+                }
                 //calculate the student's missing quality points
                 double QPneeded = ((Grades.TotalHours * 2) - Grades.QualityPoints);
                 //output to label
@@ -276,14 +280,16 @@ namespace Grade_Calculator_Final
                         {
                             mainTable.Rows[i].Visible = true;
                         }
+                        Session["table"] = mainTable;
                         return;
                     }
                     else
                     {
-                        for (int i = 1; i < 5; i++)
+                        for (int i = 1; i < 5 + 1; i++)
                         {
                             mainTable.Rows[i].Visible = true;
                         }
+                        Session["table"] = mainTable;
                         return;
                     }
                 }
@@ -321,11 +327,12 @@ namespace Grade_Calculator_Final
                             tableIndex++;
                         }
                     }
+                    Session["table"] = mainTable;
                 }
             }
             else
             {
-                //MakeTables();
+                mainTable = Session["table"] as Table;
             }
         }
 
@@ -333,6 +340,7 @@ namespace Grade_Calculator_Final
         {
             Button btn = (Button)sender;
             btn.Parent.Parent.Visible = false;
+            Session["table"] = mainTable;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
