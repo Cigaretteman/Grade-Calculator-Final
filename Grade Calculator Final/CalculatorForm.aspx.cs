@@ -153,6 +153,10 @@ namespace Grade_Calculator_Final
                 }
                 //calculate GPA with method call
                 Grades.GPA = (double)Grades.QualityPoints / Grades.FilledHours;
+                lblQPOut.Text = Grades.QualityPoints.ToString();
+                lblHoursOut.Text = Grades.FilledHours.ToString();
+                lblQP.Text = Grades.QualityPoints.ToString();
+                lblHours.Text = Grades.FilledHours.ToString();
                 if (Grades.UnfilledCount <= 0)
                 {
                     return;

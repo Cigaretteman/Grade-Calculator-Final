@@ -54,7 +54,7 @@
         <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-2">
                         <triggers>
 
                         </triggers>
@@ -69,7 +69,7 @@
                         <br />
                         <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" Width="115px" />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-8">
                         <asp:Table ID="mainTable" runat="server">
                             <asp:TableHeaderRow ID="headerRow">
                                 <asp:TableHeaderCell>Course Name</asp:TableHeaderCell>
@@ -254,8 +254,22 @@
                         </asp:Table>
                         <asp:ListBox runat="server" ID="listOut" Height="182px" Width="537px"></asp:ListBox>
                     </div>
-                    <div class="col-md-4">
-                        <asp:Label ID="lblGPAOut" runat="server" Text="GPA:"></asp:Label>
+                    <div class="col-2" style="background-color:lightgray; padding:20px; width:300px; height:400px">
+                        <asp:Label ID="Label3" runat="server" Text="Your Quality Points:"></asp:Label>
+                        <asp:Label ID="lblQP" runat="server" Text=""></asp:Label>
+                        <br />
+                        <asp:Label ID="Label5" runat="server" Text="Total Hours:"></asp:Label>
+                        <asp:Label ID="lblHours" runat="server" Text=""></asp:Label>
+                        <br />
+                        <br />
+                        <div style="text-align:center;">
+                        <asp:Label ID="lblQPOut" runat="server" Text="Quality Points"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="/"></asp:Label>
+                        <asp:Label ID="lblHoursOut" runat="server" Text="Total Hours"></asp:Label>
+                        <br />
+                        <asp:Label ID="Label2" runat="server" Text="="></asp:Label>
+                        <asp:Label ID="lblGPAOut" runat="server" Text="GPA"></asp:Label>
+                            </div>
                     </div>
 
                 </div>
