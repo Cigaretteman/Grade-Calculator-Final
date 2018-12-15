@@ -70,7 +70,7 @@
     <Content Include="calcFormStyle.css" />
     <Content Include="landingPage.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="CalculatorForm.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="landingPage.aspx.cs">
@@ -81,12 +81,11 @@
       <DependentUpon>landingPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="CalculatorForm.aspx.cs">
+      <DependentUpon>CalculatorForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="CalculatorForm.aspx.designer.cs">
+      <DependentUpon>CalculatorForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

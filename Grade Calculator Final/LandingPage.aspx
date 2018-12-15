@@ -13,20 +13,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid" style="text-align:center">
-            <div class="col-4 landingBorder" style="height:auto; padding-bottom:20px;">
-                <div style="padding:10px">
-                Enter the amount of classes in the course:
+        <div class="container-fluid" style="text-align: center">
+            <div class="col-4 landingBorder" style="height: auto; padding-bottom: 20px;">
+                <div style="padding: 10px">
+                    Enter the amount of classes in the course:
                 <asp:TextBox ID="txtCourseAmt" runat="server"></asp:TextBox>
-                <asp:Button runat="server" ID="btnLoad" Text="Create" OnClick="btnLoad_Click" Width="177px" />
-                    </div>
-                <div style="padding:10px">
-                Or choose an existing program:
+                    <asp:Button runat="server" ID="btnLoad" Text="Create" OnClick="btnLoad_Click" Width="177px" />
+                </div>
+                <div style="padding: 10px">
+                    Or choose an existing program:
                 <asp:DropDownList runat="server" ID="courseDDL"></asp:DropDownList>
-                <asp:Button runat="server" ID="dropBtn" Text="Create" OnClick="btnDroplist_Click" Width="177px" />
-                    </div>
+                    <asp:Button runat="server" ID="dropBtn" Text="Create" OnClick="btnDroplist_Click" Width="177px" />
+                </div>
             </div>
         </div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CoursesConnectionString %>" SelectCommand="SELECT [CourseName] FROM [Courses]"></asp:SqlDataSource>
     </form>
 </body>
 </html>
