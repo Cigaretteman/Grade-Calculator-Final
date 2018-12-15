@@ -273,7 +273,7 @@ namespace Grade_Calculator_Final
                     {
                         if (numOfTextboxes > 30)
                             numOfTextboxes = 30;
-                        for (int i = 1; i <= numOfTextboxes; i++)
+                        for (int i = 1; i < numOfTextboxes; i++)
                         {
                             mainTable.Rows[i].Visible = true;
                         }
@@ -281,7 +281,7 @@ namespace Grade_Calculator_Final
                     }
                     else
                     {
-                        for (int i = 1; i <= 5; i++)
+                        for (int i = 1; i < 5; i++)
                         {
                             mainTable.Rows[i].Visible = true;
                         }
