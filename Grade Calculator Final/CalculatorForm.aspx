@@ -49,24 +49,24 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="row">
-            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
-            </asp:ScriptManager>
-            <div class="col-md-4">
-                <asp:Button runat="server" Text="Clear" Width="115px" />
-                <br />
-                <asp:Button runat="server" Width="115px" Text="Calculate" OnClick="Calculate" OnClientClick="return MyFunction();" />
-                <br />
-                <asp:Button runat="server" Text="Add Class" OnClick="Btn_Click" Width="115px" />
-                <br />
-                <br />
-                <asp:TextBox ID="CourseName" Text="" runat="server"></asp:TextBox>
-                <br />
-                <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" Width="115px" />
-            </div>
-            <div class="col-md-8">
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-                    <ContentTemplate>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="row">
+                    <div class="col-md-4">
+                        <asp:Button runat="server" Text="Clear" Width="115px" />
+                        <br />
+                        <asp:Button runat="server" Width="115px" Text="Calculate" OnClick="Calculate" OnClientClick="return MyFunction();" />
+                        <br />
+                        <asp:Button runat="server" Text="Add Class" OnClick="Btn_Click" Width="115px" />
+                        <br />
+                        <br />
+                        <asp:TextBox ID="CourseName" Text="" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" Width="115px" />
+                    </div>
+                    <div class="col-md-8">
                         <asp:Table ID="mainTable" runat="server">
                             <asp:TableHeaderRow ID="headerRow">
                                 <asp:TableHeaderCell>Course Name</asp:TableHeaderCell>
@@ -249,14 +249,15 @@
                                 <asp:TableCell><asp:Button runat="server" OnClick="Unnamed_Click" Text="X"/></asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-                <asp:ListBox runat="server" ID="listOut" Height="182px" Width="537px"></asp:ListBox>
-            </div>
-            <div class="col-md-4">
-                <asp:Label ID="lblGPAOut" runat="server" Text="GPA:"></asp:Label>
-            </div>
-        </div>
+                        <asp:ListBox runat="server" ID="listOut" Height="182px" Width="537px"></asp:ListBox>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:Label ID="lblGPAOut" runat="server" Text="GPA:"></asp:Label>
+                    </div>
+
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CoursesConnectionString %>" SelectCommand="SELECT Classes FROM Courses WHERE CourseName="></asp:SqlDataSource>
     </form>
 </body>
