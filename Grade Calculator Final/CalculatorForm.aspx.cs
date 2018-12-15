@@ -159,12 +159,13 @@ namespace Grade_Calculator_Final
                 lblHours.Text = Grades.FilledHours.ToString();
                 if (Grades.UnfilledCount <= 0)
                 {
-
+                    lblGPAOut.Text = Grades.GPA.ToString("0.00");
+                    return;
                 }
                 //calculate the student's missing quality points
                 double QPneeded = ((Grades.TotalHours * 2) - Grades.QualityPoints);
                 //output to label
-                lblGPAOut.Text = Grades.GPA.ToString("0.00");
+
 
                 Perm(Grades, QPneeded);
             }
