@@ -280,7 +280,6 @@ namespace Grade_Calculator_Final
                         {
                             mainTable.Rows[i].Visible = true;
                         }
-                        Session["table"] = mainTable;
                         return;
                     }
                     else
@@ -289,7 +288,6 @@ namespace Grade_Calculator_Final
                         {
                             mainTable.Rows[i].Visible = true;
                         }
-                        Session["table"] = mainTable;
                         return;
                     }
                 }
@@ -327,7 +325,6 @@ namespace Grade_Calculator_Final
                             tableIndex++;
                         }
                     }
-                    Session["table"] = mainTable;
                 }
             }
             else
