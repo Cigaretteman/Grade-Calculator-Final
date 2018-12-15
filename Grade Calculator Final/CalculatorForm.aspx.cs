@@ -323,8 +323,8 @@ namespace Grade_Calculator_Final
                         for (int i = 0; i < Tokens.Length; i += 2)
                         {
                             mainTable.Rows[tableIndex].Visible = true;
-                            mainTable.Rows[tableIndex].Cells[0].Text = Tokens[i];
-                            mainTable.Rows[tableIndex].Cells[1].Text = Tokens[(i) + 1];
+                            ((TextBox)mainTable.Rows[tableIndex].Cells[0].Controls[0]).Text = Tokens[i];
+                            ((TextBox)mainTable.Rows[tableIndex].Cells[1].Controls[0]).Text = Tokens[i + 1];
                             tableIndex++;
                         }
                     }
@@ -333,7 +333,6 @@ namespace Grade_Calculator_Final
             }
             else
             {
-                mainTable = Session["table"] as Table;
             }
         }
 
@@ -341,7 +340,6 @@ namespace Grade_Calculator_Final
         {
             Button btn = (Button)sender;
             btn.Parent.Parent.Visible = false;
-            Session["table"] = mainTable;
         }
 
         protected void Button1_Click(object sender, EventArgs e)

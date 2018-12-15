@@ -55,6 +55,9 @@
             <ContentTemplate>
                 <div class="row">
                     <div class="col-md-4">
+                        <triggers>
+
+                        </triggers>
                         <asp:Button runat="server" Text="Clear" Width="115px" />
                         <br />
                         <asp:Button runat="server" Width="115px" Text="Calculate" OnClick="Calculate" OnClientClick="return MyFunction();" />
