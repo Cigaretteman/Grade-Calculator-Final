@@ -155,7 +155,7 @@ namespace Grade_Calculator_Final
                 Grades.GPA = (double)Grades.QualityPoints / Grades.FilledHours;
                 if (Grades.UnfilledCount <= 0)
                 {
-                    return;
+
                 }
                 //calculate the student's missing quality points
                 double QPneeded = ((Grades.TotalHours * 2) - Grades.QualityPoints);
@@ -340,6 +340,10 @@ namespace Grade_Calculator_Final
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (CourseName.Text.Length <= 0)
+            {
+                lblSave.Text = "Cannot save empty name";
+            }
             StringBuilder Query = new StringBuilder($"INSERT INTO Courses (CourseName, Classes) VALUES ('{CourseName.Text}','");
             Dictionary<string, string> Data = new Dictionary<string, string>();
             List<string> Classes = new List<string>();
@@ -382,11 +386,11 @@ namespace Grade_Calculator_Final
             }
             if (rowsAff == 0)
             {
-                CourseName.Text = $"{CourseName.Text} already exists";
+                lblSave.Text = $"{CourseName.Text} already exists";
             }
             else
             {
-                CourseName.Text = "Created";
+                lblSave.Text = "Created";
             }
         }
         public static int GetGrade(int Grade)

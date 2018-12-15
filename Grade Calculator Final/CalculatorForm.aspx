@@ -68,6 +68,7 @@
                         <asp:TextBox ID="CourseName" Text="" runat="server"></asp:TextBox>
                         <br />
                         <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" Width="115px" />
+                        <asp:Label runat="server" ID="lblSave"></asp:Label>
                     </div>
                     <div class="col-md-8">
                         <asp:Table ID="mainTable" runat="server">
@@ -257,7 +258,6 @@
                     <div class="col-md-4">
                         <asp:Label ID="lblGPAOut" runat="server" Text="GPA:"></asp:Label>
                     </div>
-
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
