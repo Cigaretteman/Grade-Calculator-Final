@@ -52,7 +52,7 @@
         <div class="row">
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
             </asp:ScriptManager>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <asp:Button runat="server" Text="Clear" Width="115px" />
                 <br />
                 <asp:Button runat="server" Width="115px" Text="Calculate" OnClick="Calculate" OnClientClick="return MyFunction();" />
@@ -253,7 +253,7 @@
                 </asp:UpdatePanel>
                 <asp:ListBox runat="server" ID="listOut" Height="182px" Width="537px"></asp:ListBox>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <asp:Label ID="lblGPAOut" runat="server" Text="GPA:"></asp:Label>
             </div>
         </div>

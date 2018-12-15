@@ -126,7 +126,6 @@ namespace Grade_Calculator_Final
                             else if (Hours == 5)
                             {
                                 ListItems.Add($"{TextBoxes[0].Text} has a grade lower than 50. You cannot have failing grades.");
-                                ListItems.Add("You cannot have failing grades.");
                                 ListItems.Add("Considering it never taken for calulations");
                                 ListItems.Add(string.Empty);
                                 Unfilled.Add(new ClassHolder
@@ -273,7 +272,7 @@ namespace Grade_Calculator_Final
                     {
                         if (numOfTextboxes > 30)
                             numOfTextboxes = 30;
-                        for (int i = 1; i < numOfTextboxes; i++)
+                        for (int i = 0; i <= numOfTextboxes; i++)
                         {
                             mainTable.Rows[i].Visible = true;
                         }
